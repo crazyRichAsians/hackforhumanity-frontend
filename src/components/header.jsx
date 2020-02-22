@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const s_header = styled.header`
+const S_Header = styled.header`
     background-color: yellow;
     height: 100px;
     padding:0;
@@ -23,12 +23,14 @@ const s_header = styled.header`
     }
 `
 
-export const HeaderComponent = () => {
+const HeaderComponent = () => {
     return (
-        <s_header>
+        <S_Header>
             <div className='link'>
                 Wound care logo insert here
             </div>
-        </s_header>
+        </S_Header>
     )
 }
+
+export {HeaderComponent}
