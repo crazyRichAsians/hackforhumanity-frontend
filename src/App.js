@@ -3,7 +3,7 @@ import { HeaderComponent } from './components/header'
 
 import ConvertImage from 'react-convert-image'
 import ImageUpload from './components/imageUpload'
-//import { SideBar } from './components/sidebar'
+import LandingPage  from './components/landingpage'
 import './App.css';
 
 class App extends React.Component {
@@ -12,8 +12,7 @@ class App extends React.Component {
       return (
         <div className="wound-care">
           <HeaderComponent/>
-          {/* <Sidebar/> */}
-
+          <LandingPage/>
         </div>
       )
   }
