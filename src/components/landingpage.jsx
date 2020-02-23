@@ -4,8 +4,6 @@ import welcomeImg from '../images/welcome_pic.png'
 import ImageUpload from '../components/imageUpload'
 import styled from 'styled-components'
 
-
-
 const S_LandingPage = styled.div`
 
   position: relative;
@@ -45,4 +43,3 @@ const LandingPage = () => {
 }
 
 export {LandingPage}
-

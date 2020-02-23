@@ -333,7 +333,6 @@ class ImageUpload extends React.Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      console.log(this.state);
       return (
         <Redirect
           to={{

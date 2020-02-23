@@ -6,6 +6,7 @@ import selfCare from '../images/self-care.jpeg'
 import seekHelp from '../images/seek-help.jpeg'
 import styled from 'styled-components'
 import { connect } from "react-redux";
+import windowSize from "react-window-size";
 
 const S_Results=styled.div`
     margin-top:  10px;
@@ -40,8 +41,6 @@ const S_Results=styled.div`
 `
 
 class Results extends React.Component {
-   
-
     render() {
         console.log(this.props.prediction)
     return (
