@@ -49,7 +49,7 @@ const HeaderComponent = () => {
         <S_Header>
 <<<<<<< HEAD:src/components/header.jsx
             <div className='link'>
-                Wound care logo insert here
+                here
             </div>
 =======
             <div className='logo'>
