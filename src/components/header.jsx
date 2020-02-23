@@ -8,11 +8,8 @@ import  pluslogo from '../images/plus-5-32.png'
 import 'mdbreact/dist/css/mdb.css'
 
 const S_Header = styled.header`
-<<<<<<< HEAD:src/components/header.jsx
-    background-color: yellow;
-=======
+
     background-color: pink;
->>>>>>> headernew:my-app/src/components/header.jsx
     height: 100px;
     padding:0;
     display: flex;
@@ -30,7 +27,7 @@ const S_Header = styled.header`
     }
 
     .social{
-        .
+        
         display:flex;
         align-items: center;
         margin-left: 10px;
@@ -47,11 +44,7 @@ const S_Header = styled.header`
 const HeaderComponent = () => {
     return (
         <S_Header>
-<<<<<<< HEAD:src/components/header.jsx
-            <div className='link'>
-                Wound care logo insert here
-            </div>
-=======
+
             <div className='logo'>
                 <img src={logoimage} alt="Wound Care Logo"></img>
             
@@ -64,7 +57,6 @@ const HeaderComponent = () => {
                
             </div>
 
->>>>>>> headernew:my-app/src/components/header.jsx
         </S_Header>
     )
 }
