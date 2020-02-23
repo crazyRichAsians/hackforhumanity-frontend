@@ -318,7 +318,7 @@ class ImageUpload extends React.Component {
 
     const data = new FormData();
     data.append("file", file);
-    axios.post("http://172.31.123.174:5000/predict", data).then(result => {
+    axios.post("https://woundcarebackend.azurewebsites.net/predict", data).then(result => {
       console.log(result);
       if (result.data["prediction"] == "1st Degree") {
         // this.setState({ prediction: "1st Degree" });
