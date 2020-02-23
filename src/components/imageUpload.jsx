@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 export const S_ImageUpload = styled.div`
     margin: 10px;
@@ -42,14 +44,18 @@ export const S_ImageUpload = styled.div`
 `
 
  class ImageUpload extends React.Component {
+
     constructor(props) {
       super(props);
-      this.state = {file: '',imagePreviewUrl: ''};
+      this.state = {file: '',imagePreviewUrl: '', isUploading:false};
+    }
+
+    state = {
+        redirect: false
     }
   
     _handleSubmit(e) {
       e.preventDefault();
-      // TODO: do something with -> this.state.file
       console.log('handle uploading-', this.state.file);
     }
   
@@ -68,10 +74,18 @@ export const S_ImageUpload = styled.div`
   
       reader.readAsDataURL(file)
     }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/results' />
+        }
+    }
+
   
     render() {
       let {imagePreviewUrl} = this.state;
       let $imagePreview = null;
+      //let history = useHistory()
       if (imagePreviewUrl) {
         $imagePreview = (<img src={imagePreviewUrl} />);
       } else {
@@ -81,14 +95,20 @@ export const S_ImageUpload = styled.div`
       return (
         <S_ImageUpload>
             <div className="previewComponent">
+                {this.renderRedirect()}
             <form onSubmit={(e)=>this._handleSubmit(e)}>
                 <label className="submitButton">
-                
-                        <input className="fileInput" 
-                        type="file" 
-                        onChange={(e)=>this._handleImageChange(e)}
-                        style= {{display: 'none'}} />
-                
+                <input className="fileInput" 
+                    type="file" 
+                    onChange={(e)=> {
+                        this.state.isUploading = true
+                        this._handleImageChange(e)
+                        console.log('uploaded')
+                        this.setState({redirect: true})
+                       // history.push('/results')
+                        this.state.isUploading=false
+                    }}
+                style= {{display: 'none'}} />
                     Analyze Now
                 </label>
             </form>
@@ -98,7 +118,7 @@ export const S_ImageUpload = styled.div`
           
             </div>
         </S_ImageUpload>
-      )
+        )
     }
   }
 
