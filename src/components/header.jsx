@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ImageUpload from './imageUpload'
+import ImageUpload, { S_ImageUpload } from './imageUpload'
 import logoimage from '../images/woundcarelogo1.png'
 import 'mdbreact/dist/css/mdb.css'
 import './header.css'
@@ -53,7 +53,12 @@ const S_Header = styled.header`
         }
     }
 
-    
+    ${S_ImageUpload} {
+        .submitButton {
+            background: white;
+        }
+    }
+
 `
 
 const HeaderComponent = () => {

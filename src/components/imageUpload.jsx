@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const S_ImageUpload = styled.div`
+export const S_ImageUpload = styled.div`
     margin: 10px;
 
     .fileInput {
