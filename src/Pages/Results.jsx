@@ -1,18 +1,26 @@
 import React from "react";
-import { HeaderComponent } from "../components/header";
+import { HeaderComponent, StyleSheet } from "../components/header";
 import { connect } from "react-redux";
+import windowSize from "react-window-size";
 
 class Results extends React.Component {
   render() {
-    // if (this.state.imageUrl) {
-    //   $imagePreview = (<img src={this.state.imageUrl} />);
-    // } else {
-    //   $imagePreview = (<div className="previewText">Your image failed to upload</div>);
-    // }
     return (
       <div className="wound-care">
-        <p>{this.props.prediction}</p>
-        <img src={this.props.imageUrl} />
+        <p style={{ textAlign: "center", fontSize: "30px", color: "red" }}>
+          {this.props.prediction}
+        </p>
+        <img
+          src={this.props.imageUrl}
+          style={{
+            width: "50%",
+            height: "50%",
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "block",
+            border: "5px solid black"
+          }}
+        />
       </div>
     );
   }
