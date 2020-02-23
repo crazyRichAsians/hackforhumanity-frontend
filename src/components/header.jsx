@@ -1,13 +1,13 @@
 import React from 'react'
 import {MDBIcon} from 'mdbreact'
 import styled from 'styled-components'
-import logoimage from '../images/output-onlinepngtools.png'
+import logoimage from '../images/woundcarelogo1.png'
 import 'mdbreact/dist/css/mdb.css'
 import './header.css'
 
 const S_Header = styled.header`
 
-    background-color: pink;
+    background-color: #d7fcff;
     height: 100px;
     padding:0;
     display: flex;
@@ -22,6 +22,18 @@ const S_Header = styled.header`
         margin-right: 10px;
         padding: 10px 15px;
         border-radius: 3px;
+        .logotitle{
+            text-align: center;
+            text-transform: uppercase;
+            text-indent: 10px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #474c4d;
+            font-weight: 1000;
+            font-size: 50px;
+            font-family: "quicksand";
+
+        }
     }
 
     .social{
@@ -43,7 +55,8 @@ const HeaderComponent = () => {
         <S_Header>
 
             <div className='logo'>
-                <img src={logoimage} alt="Wound Care Logo"></img>
+                <img src={logoimage} alt="Wound Care Logo"width = "100"></img>
+                <div className = 'logotitle'>WOUND CARE</div>
             
             </div>
             
