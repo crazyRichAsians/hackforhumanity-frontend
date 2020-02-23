@@ -27,7 +27,7 @@ const HeaderComponent = () => {
     return (
         <S_Header>
             <div className='link'>
-                Wound care logo insert here
+                here
             </div>
         </S_Header>
     )

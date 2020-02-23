@@ -1,6 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import { HeaderComponent } from './components/header'
+//import { SideBar } from './components/sidebar'
+import SideNav from './components/sideNav/SideNav'
+import { Sidebar } from './components/sidebar'
 import './App.css';
 
 class App extends React.Component {
@@ -8,6 +10,7 @@ class App extends React.Component {
       return (
         <div className="Wound-care">
           <HeaderComponent/>
+          <Sidebar/>
         </div>
       )
   }
