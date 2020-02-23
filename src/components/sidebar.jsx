@@ -1,6 +1,8 @@
 import React from 'react'
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import {MDBIcon} from 'mdbreact'
+import info from '../images/1828558.svg'
+import aid from '../images/2231230.svg'
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
@@ -21,8 +23,13 @@ const Sidebar = () => {
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="aboutus">
                     <NavItem eventKey="aboutus">
-                        <NavIcon>
-                            <MDBIcon icon="info-circle" style={{color: 'white'}}/>
+                        <NavIcon >
+                            <img className='info-icon' src={info} alt="About Us" 
+                                style={{
+                                    height: '35px', 
+                                    width: '35px',
+                                    margin: '7px 0 0 0'
+                                     }}></img>
                         </NavIcon>
                         <NavText>
                             About Us
@@ -30,7 +37,10 @@ const Sidebar = () => {
                     </NavItem>
                     <NavItem eventKey="woundsandinjury">
                         <NavIcon>
-                            <i className="fa fa-fw fa-line-chart" style={{ fontSize: '1.75em' }} />
+                            <img className='aid-icon' src={aid} alt="Aid Icon" 
+                            style={{height: '35px', 
+                                    width: '35px',
+                                    margin: '7px 0 0 0'}}></img>
                         </NavIcon>
                         <NavText>
                             Wounds and Injury

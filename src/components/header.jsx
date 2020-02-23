@@ -1,15 +1,12 @@
 import React from 'react'
-import {MDBIcon} from 'mdbreact'
 import styled from 'styled-components'
 import logoimage from '../images/output-onlinepngtools.png'
-import fblogo from '../images/facebook-3-32.png'
-import searchlogo from '../images/search-3-32.png'
-import  pluslogo from '../images/plus-5-32.png'
+import ImageUpload from './imageUpload'
 import 'mdbreact/dist/css/mdb.css'
 
 const S_Header = styled.header`
 
-    background-color: pink;
+    background-color: #4dc0d7;
     height: 100px;
     padding:0;
     display: flex;
@@ -26,7 +23,7 @@ const S_Header = styled.header`
         border-radius: 3px;
     }
 
-    .social{
+    .header-right{
         
         display:flex;
         align-items: center;
@@ -34,10 +31,17 @@ const S_Header = styled.header`
         padding: 15px 10px;
         border-radius: 3px;
 
-        .component {
-            padding: 10px;
+        .button {
+            color: white;
+            font-size: 1em;
+            margin: 1em;
+            padding: 0.25em 1em;
+            border: 2px solid palevioletred;
+            border-radius: 3px;
         }
     }
+
+    
 `
         
 
@@ -47,15 +51,19 @@ const HeaderComponent = () => {
 
             <div className='logo'>
                 <img src={logoimage} alt="Wound Care Logo"></img>
-            
             </div>
+
+            <div>
+                <ImageUpload/>
+            </div>
+
             
-            <div className='social'>
-                <img className='component' src={fblogo} alt="fb Logo" widt></img>
+            {/* <div className='social'>
+                <img className='component' src={fblogo} alt="fb Logo"></img>
                 <img className = 'component' src={searchlogo} alt="search Logo"></img>
                 <img className = 'component' src={pluslogo} alt="plus Logo"></img>
-               
-            </div>
+            </div> */}
+
 
         </S_Header>
     )
