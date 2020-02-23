@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ImageUpload, { S_ImageUpload } from './imageUpload'
-import logoimage from '../images/woundcarelogo1.png'
+import logoimage from '../images/woundcarelogo.jpeg'
 import 'mdbreact/dist/css/mdb.css'
 import './header.css'
 
@@ -53,12 +53,6 @@ const S_Header = styled.header`
         }
     }
 
-    ${S_ImageUpload} {
-        .submitButton {
-            background: white;
-        }
-    }
-
 `
 
 const HeaderComponent = () => {
@@ -66,11 +60,8 @@ const HeaderComponent = () => {
         <S_Header>
 
             <div className='logo'>
-                <img src={logoimage} alt="Wound Care Logo"width = "100"></img>
-                <div className = 'logotitle'>WOUND CARE</div>
-            
+                <img src={logoimage} alt="Wound Care Logo"height = "100"></img>
             </div>
-
             <div>
                 <ImageUpload/>
             </div>

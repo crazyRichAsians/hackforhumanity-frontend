@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import {useHistory} from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
+import {Results} from '../Pages/Results'
+
 
 export const S_ImageUpload = styled.div`
     margin: 10px;
@@ -25,12 +26,14 @@ export const S_ImageUpload = styled.div`
     .submitButton {
         padding: 12px;
         margin-left: 10px;
-        background: #d7fcff;
+        background: white;
+        border-color: black;
+        border-width: 3px;
         margin-top: 30px;
         border-radius: 5px;
         font-weight: 1000;
         font-size: 15pt;
-        font-family: 'Open Sans';
+        /* font-family: 'marker felt'; */
         cursor: pointer;
         &:hover {
             background: #efefef
@@ -47,7 +50,7 @@ export const S_ImageUpload = styled.div`
 
     constructor(props) {
       super(props);
-      this.state = {file: '',imagePreviewUrl: '', isUploading:false};
+      this.state = {file: '',imagePreviewUrl: ''};
     }
 
     state = {
@@ -66,18 +69,30 @@ export const S_ImageUpload = styled.div`
       let file = e.target.files[0];
   
       reader.onloadend = () => {
+        console.log('uploaded')
         this.setState({
           file: file,
-          imagePreviewUrl: reader.result
+          imagePreviewUrl: reader.result,
+          redirect: true
         });
       }
   
       reader.readAsDataURL(file)
     }
 
+    
+
     renderRedirect = () => {
         if (this.state.redirect) {
-            return <Redirect to='/results' />
+            return (
+            <div>
+                <Redirect
+                    to={{
+                        pathname: '/results',
+                        state: { hello: 'hi', image: this.state.imagePreviewUrl }
+                    }} />
+            </div>
+            )
         }
     }
 
@@ -88,6 +103,7 @@ export const S_ImageUpload = styled.div`
       //let history = useHistory()
       if (imagePreviewUrl) {
         $imagePreview = (<img src={imagePreviewUrl} />);
+        
       } else {
         $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
       }
@@ -101,20 +117,15 @@ export const S_ImageUpload = styled.div`
                 <input className="fileInput" 
                     type="file" 
                     onChange={(e)=> {
-                        this.state.isUploading = true
                         this._handleImageChange(e)
-                        console.log('uploaded')
-                        this.setState({redirect: true})
-                       // history.push('/results')
-                        this.state.isUploading=false
                     }}
                 style= {{display: 'none'}} />
                     Analyze Now
                 </label>
             </form>
-            {/* <div className="imgPreview">
+             {/* <div className="imgPreview">
                 {$imagePreview}
-            </div> */}
+            </div>  */}
           
             </div>
         </S_ImageUpload>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Home from './Pages/Home'
-import Results from './Pages/Results'
+import {Results} from './Pages/Results'
 import './App.css'
 
 export default function App() {

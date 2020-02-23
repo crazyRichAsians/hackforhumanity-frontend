@@ -1,14 +1,48 @@
-import React from 'react';
-import LPImage from '../images/welcome.jpg';
-import './landingpage.css'
+import React from 'react'
+import welcomeImg from '../images/welcome_pic.png'
 
-console.log(LPImage); // /logo.84287d09.png
+import ImageUpload from '../components/imageUpload'
+import styled from 'styled-components'
 
-function Header() {
-  // Import result is the URL of your image
+
+
+const S_LandingPage = styled.div`
+
+  position: relative;
+  display:flex;
+
+  .img{
+    justify-items: center;
+    margin-left: 150px;
+    margin-right: 150px; 
+
+    height: auto;
+  }
+  .btn{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+  }
+
+
+`
+
+
+const LandingPage = () => {
   
-  return <img src={LPImage} alt="landing page" width='1080px' className="landing-page" />;
+  return (
+    <S_LandingPage>
+      <div className='landing-page'>
+        <img src={welcomeImg} className='img'/>
+        <div className='btn'>
+          <ImageUpload/>
+        </div>
+        
+      </div>
+    </S_LandingPage>
+
+  ) 
 }
 
-export default Header;
+export {LandingPage}
 
