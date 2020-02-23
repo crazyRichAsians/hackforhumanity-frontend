@@ -1,17 +1,17 @@
 import React from 'react';
 import { HeaderComponent } from './components/header'
-//import { SideBar } from './components/sidebar'
-import SideNav from './components/sideNav/SideNav'
-import { Sidebar } from './components/sidebar'
+
+import ConvertImage from 'react-convert-image'
+import ImageUpload from './components/imageUpload'
 import LandingPage  from './components/landingpage'
 import './App.css';
 
 class App extends React.Component {
   render() {
+
       return (
-        <div className="Wound-care">
+        <div className="wound-care">
           <HeaderComponent/>
-          <Sidebar/>
           <LandingPage/>
         </div>
       )
@@ -20,3 +20,4 @@ class App extends React.Component {
 }
 
 export default App;
+

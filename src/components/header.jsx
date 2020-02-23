@@ -1,12 +1,11 @@
 import React from 'react'
-import {MDBIcon} from 'mdbreact'
 import styled from 'styled-components'
+import ImageUpload from './imageUpload'
 import logoimage from '../images/woundcarelogo1.png'
 import 'mdbreact/dist/css/mdb.css'
 import './header.css'
 
 const S_Header = styled.header`
-
     background-color: #d7fcff;
     height: 100px;
     padding:0;
@@ -36,7 +35,7 @@ const S_Header = styled.header`
         }
     }
 
-    .social{
+    .header-right{
         
         display:flex;
         align-items: center;
@@ -44,10 +43,17 @@ const S_Header = styled.header`
         padding: 15px 10px;
         border-radius: 3px;
 
-        .component {
-            padding: 10px;
+        .button {
+            color: white;
+            font-size: 1em;
+            margin: 1em;
+            padding: 0.25em 1em;
+            border: 2px solid palevioletred;
+            border-radius: 3px;
         }
     }
+
+    
 `
 
 const HeaderComponent = () => {
@@ -59,11 +65,9 @@ const HeaderComponent = () => {
                 <div className = 'logotitle'>WOUND CARE</div>
             
             </div>
-            
-            <div className='social'>
-                <MDBIcon icon="facebook-square" size="3x" style={{color: 'white'}} />
-                <MDBIcon icon="search" size="3x" style={{color: 'white'}} />
-                <MDBIcon icon="plus" size="3x" style={{color: 'white'}} />
+
+            <div>
+                <ImageUpload/>
             </div>
 
         </S_Header>
