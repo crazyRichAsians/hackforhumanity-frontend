@@ -2,10 +2,8 @@ import React from 'react'
 import {MDBIcon} from 'mdbreact'
 import styled from 'styled-components'
 import logoimage from '../images/output-onlinepngtools.png'
-import fblogo from '../images/facebook-3-32.png'
-import searchlogo from '../images/search-3-32.png'
-import  pluslogo from '../images/plus-5-32.png'
 import 'mdbreact/dist/css/mdb.css'
+import './header.css'
 
 const S_Header = styled.header`
 
@@ -39,7 +37,6 @@ const S_Header = styled.header`
         }
     }
 `
-        
 
 const HeaderComponent = () => {
     return (
@@ -51,10 +48,9 @@ const HeaderComponent = () => {
             </div>
             
             <div className='social'>
-                <img className='component' src={fblogo} alt="fb Logo" widt></img>
-                <img className = 'component' src={searchlogo} alt="search Logo"></img>
-                <img className = 'component' src={pluslogo} alt="plus Logo"></img>
-               
+                <MDBIcon icon="facebook-square" size="3x" style={{color: 'white'}} />
+                <MDBIcon icon="search" size="3x" style={{color: 'white'}} />
+                <MDBIcon icon="plus" size="3x" style={{color: 'white'}} />
             </div>
 
         </S_Header>
