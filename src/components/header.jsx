@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import ImageUpload, { S_ImageUpload } from './imageUpload'
-import logoimage from '../images/woundcarelogo.jpeg'
-import 'mdbreact/dist/css/mdb.css'
-import './header.css'
+import React from "react";
+import styled from "styled-components";
+import ImageUpload, { S_ImageUpload } from "./imageUpload";
+import logoimage from "../images/woundcarelogo.jpeg";
+import "mdbreact/dist/css/mdb.css";
+import "./header.css";
 
 const S_Header = styled.header`
   background-color: #d7fcff;
@@ -48,20 +48,19 @@ const S_Header = styled.header`
       border-radius: 3px;
     }
   }
+`;
 
 const HeaderComponent = () => {
-    return (
-        <S_Header>
-
-            <div className='logo'>
-                <img src={logoimage} alt="Wound Care Logo"height = "100"></img>
-            </div>
-            <div>
-                <ImageUpload/>
-            </div>
-
-        </S_Header>
-    )
-}
+  return (
+    <S_Header>
+      <div className="logo">
+        <img src={logoimage} alt="Wound Care Logo" height="100"></img>
+      </div>
+      <div>
+        <ImageUpload />
+      </div>
+    </S_Header>
+  );
+};
 
 export { HeaderComponent };
