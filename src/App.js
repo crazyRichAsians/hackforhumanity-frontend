@@ -1,23 +1,19 @@
-import React from 'react';
-import { HeaderComponent } from './components/header'
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import Home from './Pages/Home'
+import Results from './Pages/Results'
+import './App.css'
 
-import ConvertImage from 'react-convert-image'
-import ImageUpload from './components/imageUpload'
-import LandingPage  from './components/landingpage'
-import './App.css';
-
-class App extends React.Component {
-  render() {
-
+export default function App() {
       return (
-        <div className="wound-care">
-          <HeaderComponent/>
-          <LandingPage/>
+        <Router>
+        <div>
+          <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/results' component={Results}/>
+             
+          </Switch>
         </div>
+      </Router>
       )
-  }
-  
 }
-
-export default App;
-
