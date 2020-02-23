@@ -1,7 +1,5 @@
 import React from 'react'
 import { HeaderComponent } from '../components/header'
-import ImageUpload from '../components/imageUpload'
-import LandingPage  from '../components/landingpage'
 import firstDeg from '../images/first-degree-result.jpeg'
 import thirdDeg from '../images/third-degree-result.jpeg'
 import selfCare from '../images/self-care.jpeg'
@@ -25,7 +23,7 @@ const S_Results=styled.div`
 
         .imgPreview {
             text-align: center;
-            margin: 50px 350px;
+            margin: 50px 400px;
             height: 400px;
             width: 400px;
             img {
@@ -36,42 +34,45 @@ const S_Results=styled.div`
         .picture-section {
             max-width:100%;
             height:auto;
+            margin-left: 120px;
         }
     }
 `
 
-// const Results = ({location}) => {
 class Results extends React.Component {
-    //const image = location.state ? location.state.image : null;
+   
+
     render() {
+        console.log(this.props.prediction)
     return (
+        
     <div>
         <HeaderComponent/>
         <S_Results>
            
-            {this.props.prediction === '1st Degree' ? (
+            {this.props.prediction == '1st Degree' ? (
                 <div className='result-table'>
                     <div className='imgPreview'>
                         <img src={this.props.imageUrl}/>
                     </div>
                     <div className='picture-section'>
                         <img src={firstDeg} width = "950px"/>
-                        <img src={selfCare}/>
+                        <img src={selfCare}width = "946px"/>
                     </div>
                 </div>
 
-            ) : this.props.prediction === '3rd Degree' ? (
+            ) : this.props.prediction == '3rd Degree' ? (
                 <div className='result-table'>
                     <div className='imgPreview'>
                         <img src={this.props.imageUrl}/>
                     </div>
                     <div className='picture-section'>
                         <img src={thirdDeg} width = "950px"/>
-                        <img src={seekHelp}/>
+                        <img src={seekHelp} width = "941x"/>
                     </div>
                 </div>
             ) : (
-                <h2 margin-left="20px"> No Image Found</h2>
+                <h2> No Image Found</h2>
 
             )
             }
